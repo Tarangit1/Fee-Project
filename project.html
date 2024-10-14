@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            margin: 10px;
+            background-color: #21212B;
+        }
+        input:focus {
+            outline: none;
+        }
+    #searchbra{
+        background-color: #15181C;
+        caret-color: transparent;
+    }
+    .hover {
+        transition: background-color 1s ease;
+    }
+
+
+    </style>
+</head>
+<body class="">
+    
+    <nav id="head" class="flex m-3 justify-center   ">
+        <img class="h-12 rounded-3xl flex ml-6 " src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="logo">
+        <div class=" flex flex-grow max-w-lg hover:bg-gradient-to-tr duration bg-gradient-to-br from-purple-700 to-blue-800 via-violet-800  rounded-full justify mr-6 " style="padding: 2px  ; ">
+            <div id="searchbra" class=" flex flex-grow max-w-lg bg-black rounded-full  ">
+                <label for="search-bar" class="ml-2 mr-1.5 mt-1">
+                    <img src="./img/search.png"  alt="img" class="w-6 h-6 mt-1"></label>
+                <input type="text" id="search-bar" class="text-white bg-transparent flex-grow active:border-none focus:border-none" placeholder="Search Here">
+            </div>
+        </div>
+    </nav>
+    <div id="tail" class="flex mt-8  justify-around  ">
+        <div id="sidebra" class="bg-black w-1/6  " style="border-radius: 41px;padding-top: 41px;height: 381px ; ">
+            <div  >
+                <ul class="space-y-3  ">
+                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" > <img src="./img/home.png" alt="home" class="w-6 h-6 mr-2"> Home</button></li>
+                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/explore.png" alt="explore" class="w-6 h-6 mr-2"> Explore</button></li>
+                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/notification.png" alt="notification" class="w-6 h-6 mr-2"> Notification</button></li>
+                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/settings.png" alt="settings" class="w-6 h-6 mr-2"> Settings</button></li>
+                </ul>
+                <div class="flex justify-center"><button class="mt text-white px-4 py-5 flex w-full space-y-4 justify-center" style="background:#5D5FEF; border-radius: 111px;margin-top: 48px;" >Post</button></div>
+            </div>
+        </div>
+        <div id="main" class="bg-black " style="border-radius: 41px; width: 55%;">
+            <div class="p-4 space-y-4 ">
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User1</h2>
+                            <p class="text-gray-400 text-sm">2 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the first post content. It's a great day to learn programming!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1 "> 120</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 45 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <div class="flex items-center mb-2">
+                        <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h2 class="text-white font-semibold">User2</h2>
+                            <p class="text-gray-400 text-sm">5 hours ago</p>
+                        </div>
+                    </div>
+                    <p class="text-white mb-2">This is the second post content. Loving the new features on this platform!</p>
+                    <div class="flex justify-between text-gray-400 text-sm">
+                        <button class="flex items-center"><img src="./img/upvote.png" alt="upvote" class="w-4 h-4 mr-1"> 85</button>
+                        <button class="flex items-center"><img src="./img/comment.png" alt="comment" class="w-4 h-4 mr-1"> 30 Comments</button>
+                        <button class="flex items-center"><img src="./img/share.png" alt="share" class="w-4 h-4 mr-1"> Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="trending" class="bg-black w-1/5" style="border-radius: 41px;height: 600px;"></div>
+    </div>
+
+    
+    
+    
+</body>
+</html>
