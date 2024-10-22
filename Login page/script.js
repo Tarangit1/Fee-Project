@@ -9,3 +9,7 @@ registerbtn.addEventListener("click", () => {
 loginbtn.addEventListener("click", () => {
   container.classList.remove("active");
 });
+
+import data from "../data.json";
+const parse = require('node-html-parser');
+console.log(parse(data));

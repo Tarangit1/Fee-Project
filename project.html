@@ -26,6 +26,7 @@
 
 
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body class="">
     
@@ -43,7 +44,7 @@
         <div id="sidebra" class="bg-black w-1/6  " style="border-radius: 41px;padding-top: 41px;height: 381px ; ">
             <div  >
                 <ul class="space-y-3  ">
-                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" > <img src="./img/home.png" alt="home" class="w-6 h-6 mr-2"> Home</button></li>
+                    <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" > <img src="./img/home.png" alt="home" class="w-6 h-6 mr-2"> <p id="home">Home</p></button></li>
                     <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/explore.png" alt="explore" class="w-6 h-6 mr-2"> Explore</button></li>
                     <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/notification.png" alt="notification" class="w-6 h-6 mr-2"> Notification</button></li>
                     <li class="flex justify-center"><button class=" text-white px-4 py-3 flex flex-grow " style="background:#20202a; border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img src="./img/settings.png" alt="settings" class="w-6 h-6 mr-2"> Settings</button></li>
@@ -54,7 +55,7 @@
                         <div id="main" class="bg-black " style="border-radius: 41px; width: 55%;">
                             
                             <div class="p-4 space-y-4 ">
-                                <div class="bg-gray-800 p-4 rounded-3xl">
+                                <div id="post1" class="bg-gray-800 p-4 rounded-3xl">
                                     <div class="flex items-center mb-2">
                                         <img src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="user" class="w-10 h-10 rounded-full mr-3">
                                         <div>
@@ -193,13 +194,7 @@
 
     
     
-    <script>
-        function upvote(button){
-
-
-        }
-
-    </script>
+    <script src="./script2.js"></script>
     
 </body>
 </html>
