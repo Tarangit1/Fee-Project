@@ -17,6 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Login Page</title>
     <style>
       
@@ -37,7 +38,6 @@
       .container {
         background-color: #212121;
         border-radius: 150px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
         position: relative;
         overflow: hidden;
         width: 768px;
@@ -92,7 +92,7 @@
       }
 
       .container input {
-        background-color: #ffffff;
+        background-color: #2b2b3a;
         border: none;
         margin: 8px 0;
         padding: 10px 15px;
@@ -104,6 +104,7 @@
       }
 
       .sign-up, .sign-in {
+        background: #2b2b3a;
         position: absolute;
         top: 0;
         height: 100%;
@@ -227,7 +228,7 @@
     </style>
   </head>
   <body>
-    <div class="container" id="container">
+    <div class="container" id="container" class="">
       <div class="sign-up">
         <form>
           <h1>Create Account</h1>
@@ -247,7 +248,7 @@
         </form>
       </div>
       <div class="sign-in">
-        <form>
+        <form class="text-black">
           <h1>Sign In</h1>
           <div class="icons">
             <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
@@ -259,8 +260,8 @@
           <input type="text" placeholder="Email" />
           <input type="password" placeholder="Password" />
           <a href="#">Forgot password</a>
-            <button>
-              <a href="project.html"></a>Sign In</button>
+            
+              <a href="./project.html">Sign In</a>
         
           
         </form>
@@ -280,6 +281,6 @@
         </div>
       </div>
     </div>
-    <script src="./Login page/script.js"></script>
+    <script src="./Login page/script.js" type="module"></script>
   </body>
 </html>
