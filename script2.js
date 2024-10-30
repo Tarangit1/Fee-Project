@@ -11,8 +11,6 @@ $("#logo").on("click", () => {
     
     $("#main").toggleClass("w-1/2", 200);
     $("#main").toggleClass("w-3/5", 200);
-    $("#post1").toggleClass("h-1/2");
-    $("#post1").toggleClass("h-3/5");
     for (let i = 1; i <= 4; i++) {
         $(`#sbtn${i}`).toggleClass("500");
         $(`#sbtn${i}`).toggleClass("px-10 justify-center");
