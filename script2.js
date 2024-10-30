@@ -1,6 +1,7 @@
-$("#post1").on("click", () => {
+$("#logo").on("click", () => {
     $("#sidebra").toggleClass("w-1/6", 200);
     $("#sidebra").toggleClass("w-fit", 200);
+    $("#sidebra").toggleClass("ml-5", 200);
     $("#home").toggle("fast");
     $("#explore").toggle("fast");
     $("#notification").toggle("fast");
