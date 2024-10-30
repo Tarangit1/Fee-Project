@@ -1,5 +1,15 @@
 // post.js
 
+let showNSFW = false; // Default to not showing NSFW posts
+
+document.getElementById('nsfw-toggle').addEventListener('change', (event) => {
+    showNSFW = event.target.checked;
+    const subreddit = document.querySelector('#search-bar').value;
+    if (subreddit.length > 2) {
+        embedDetailedRedditPosts(subreddit);
+    }
+});
+
 async function fetchRedditPosts(subreddit) {
     const url = `https://www.reddit.com/r/${subreddit}/hot.json`;
     try {
@@ -43,6 +53,17 @@ function createDetailedPostElement(post) {
     comments.textContent = `${post.num_comments} comments`;
     postElement.appendChild(comments);
 
+    // Check if the post is NSFW and if NSFW posts should be shown
+    if (post.over_18 && !showNSFW) {
+        const nsfwWarning = document.createElement('p');
+        nsfwWarning.classList.add('nsfw-warning');
+        nsfwWarning.textContent = 'This post is marked as NSFW.';
+        postElement.appendChild(nsfwWarning);
+        postContainer.appendChild(postElement);
+        return postContainer; // Skip displaying media for NSFW posts
+    }
+
+    // Check if the post contains an image
     if (!post.media && post.preview && post.preview.images && post.preview.images.length > 0) {
         const imageUrl = post.preview.images[0].source.url.replace(/&amp;/g, '&'); // Fix URL encoding
         const image = document.createElement('img');
@@ -63,7 +84,6 @@ function createDetailedPostElement(post) {
     }
 
     // Check if the post contains an embedded media
-   
 
     // Check if the post contains a secure media embed
     if (post.secure_media_embed && post.secure_media_embed.content) {
@@ -105,4 +125,7 @@ if (searchBar) {
             await embedDetailedRedditPosts(subreddit);
         }
     });
-}embedDetailedRedditPosts("java");
+}
+
+// Initial call to display posts from a default subreddit
+embedDetailedRedditPosts("java");
