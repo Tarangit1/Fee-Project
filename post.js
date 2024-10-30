@@ -10,6 +10,7 @@ document.getElementById('nsfw-toggle').addEventListener('change', (event) => {
     }
 });
 
+
 async function fetchRedditPosts(subreddit) {
     const url = `https://www.reddit.com/r/${subreddit}/hot.json`;
     try {
