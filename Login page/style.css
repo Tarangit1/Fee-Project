@@ -45,7 +45,7 @@
     margin: 15px 0 10px;
   }
   .container button {
-    background-color: #a82d2d;
+    background-color: #5D5FEF;
     color: #fff;
     padding: 10px 45px;
     border: 1px solid transparent;
@@ -158,9 +158,9 @@
   }
   
   .toogle {
-    background-color: #a82d2d;
+    background-color: #5D5FEF;
     height: 100%;
-    background: linear-gradient(to right, #c05c5c, #a82d2d);
+    background: linear-gradient(to right, #643a8e, #5D5FEF);
     color: #fff;
     position: relative;
     left: -100%;
