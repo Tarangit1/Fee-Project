@@ -1,252 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body{
-            margin: 10px;
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css2.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>NexZone</title>
+  </head>
 
-            background-color: #21212a;
-
-        }
-        input:focus {
-            outline: none;
-        }
-    #searchbra{
-        background-color: #15181C;
-        caret-color: transparent;
-    }
-    .hover {
-        transition: background-color 1s ease;
-    }
-
-    /* style.css */
-
-
-#main {
-    max-width: 800px;
-    margin: auto;
-    padding: 10px;
-    color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.reddit-post {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-}
-
-.post-content {
-    padding: 10px;
-}
-
-.post-content h2 {
-    margin: 0 0 10px;
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
-.post-author, .post-score, .post-comments {
-    margin: 5px 0;
-    color: #777;
-}
-
-.post-author {
-    font-size: 0.9em;
-}
-
-.post-score {
-    font-size: 0.9em;
-}
-
-.post-comments {
-    font-size: 0.9em;
-    color: #007bff;
-    cursor: pointer;
-}
-
-.post-comments:hover {
-    text-decoration: underline;
-}
-
-.post-image {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-}
-
-/* style.css */
-.post-image, .post-video, .post-embed {
-    max-width: 100%;
-    height: 400px;
-    margin: 10px 0;
-}
-
-.post-video {
-    width: 100%;
-    max-height: 400px; 
-}
-
-.post-embed iframe {
-    display: flex;
-    width:fit-content;
-    height: 400px;
-}
-/* CSS for the comments section */
-.comments-section {
-    margin-top: 20px;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background-color: #000000;
-}
-
-.reddit-comment {
-    display: flex;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #000000;
-}
-
-.vote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 10px;
-}
-
-.upvote-button, .downvote-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    color: #777;
-}
-
-.upvote-button:hover, .downvote-button:hover {
-    color: #5D5FEF;
-}
-
-.comment-score {
-    font-size: 1em;
-    color: #555;
-}
-
-.content-container {
-    flex: 1;
-}
-
-.comment-author {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.comment-body {
-    
-    margin-bottom: 10px;
-}
-#sidebra {
-    position: fixed;
-    top: 100px; /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
-}
-
-#trending {
-    position: fixed;
-    top: 100px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-}
-
-#main {
-    height: calc(100vh); /* Adjust as needed */
-    overflow-y: scroll;
-}
-
-#main::-webkit-scrollbar {
-  display: none;
-}
-
-
-
-
-
-
-    </style>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-</head>
-<body class="">
-    <nav id="head" class="flex m-3 px-2.5 ">
-        <img id="logo" class="h-12 rounded-3xl flex ml-6 " src="./img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="logo">
-        <div class="flex flex-grow ml-auto mr-auto  max-w-lg hover:bg-gradient-to-tr duration bg-gradient-to-br from-purple-800 to-blue-800 via-violet-800 rounded-full " style="padding: 2px;">
-            <div id="searchbra" class=" flex flex-grow max-w-lg bg-black rounded-full  ">
-                <label for="search-bar" class="ml-2 mr-1.5 mt-1">
-                    <img src="./img/search.png"  alt="img" class="w-6 h-6 mt-1"></label>
-                <input type="text" id="search-bar" class="text-white bg-transparent flex-grow active:border-none focus:border-none" placeholder="Search Here">
-            </div>
-        </div>
-        <div id="login" class="text-white p-3 bg-black  rounded-3xl">
-            <a href="./Login page/login page.html" id="login" class="text-white">Login/SignUp</a>
-        <!-- <label for="nsfw-toggle">Enable NSFW</label>
-        <input type="checkbox" id="nsfw-toggle"> -->
+  
+  
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="img/bg.mp4" type="video/mp4">
+  </video>
+  
+  <nav class="navbar" >
+    <div class="logo">
+      <img class="" src=".//img/initial-letter-nz-logo-design-260nw-2130116972.jpg" alt="Logo" id="logo-img" style="border-radius: 99px;">
+      NexZone
     </div>
-    </nav>
-    <div id="tail" class="flex mt-8 mx-5 justify-around">
-        <div id="sidebra" class="bg-black w-1/6 fixed-sidebar" style="border-radius: 41px; padding-top: 41px; height: 381px;">
-            <div>
-                <ul class="space-y-3">
-                    <li class="flex justify-center"><button id="sbtn1" class=" text-white  py-3 flex flex-grow px-5   " style="border-radius: 41px;margin-right: 27px; margin-left: 20px;" > <img id="sideicons1"  src="./img/home.png" alt="home" class="w-6 h-6 "> <p class="ml-2" id="home">Home</p></button></li>
-                    <li class="flex justify-center"><button id="sbtn2" class=" text-white  py-3 flex flex-grow px-5   " style="border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img  id="sideicons2" src="./img/explore.png" alt="explore" class="w-6 h-6 "><p class="ml-2" id="explore">Explore</p></button></li>
-                    <li class="flex justify-center"><button id="sbtn3" class=" text-white  py-3 flex flex-grow px-5   " style="border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img  id="sideicons3" src="./img/notification.png" alt="notification" class="w-6 h-6 "><p class="ml-2" id="notification">Notification</p></button></li>
-                    <li class="flex justify-center"><button id="sbtn4" class=" text-white  py-3 flex flex-grow px-5   " style="border-radius: 41px;margin-right: 27px; margin-left: 20px;" ><img  id="sideicons4" src="./img/settings.png" alt="settings" class="w-6 h-6"> <p class="ml-2" id="settings">Settings</p></button></li>
-                </ul>
-                <div class="flex justify-center"><button id="pstbtn" class="text-white px-4 py-5 flex w-full justify-center" style="background:#5D5FEF; border-radius: 111px;margin-top: 48px;" >Post</button></div>
-            </div>
-        </div>
-        <div id="main" class="bg-black w-1/2 text-white scrollable-main" style="border-radius: 41px;">
-            <main class="text-white"></main>
-        </div>
-        <div id="trending" class="w-1/5 max-h-max fixed-trending" style="border-radius: 41px;">
-            <div class="">
-                <div class="bg-black p-4 rounded-3xl">
-                    <h2 class="text-white
-        text-xl font-semibold mb-2">#Trending</h2>
-                            <div class="space-y-4">
-                                <div class="bg-gray-800 p-3 rounded-lg">
-                                    <p class="text-gray-400 text-sm">Trending in Technology</p>
-                                    <h3 class="text-white font-semibold">#AI</h3>
-                                    <p class="text-gray-400 text-sm">120K impressions</p>
-                                </div>
-                                <div class="bg-gray-800 p-3 rounded-lg">
-                                    <p class="text-gray-400 text-sm">Trending in Sports</p>
-                                    <h3 class="text-white font-semibold">#Olympics</h3>
-                                    <p class="text-gray-400 text-sm">80K impressions</p>
-                                </div>
-                                <div class="bg-gray-800 p-3 rounded-lg">
-                                    <p class="text-gray-400 text-sm">Trending in Entertainment</p>
-                                    <h3 class="text-white font-semibold">#NewMovie</h3>
-                                    <p class="text-gray-400 text-sm">50K impressions</p>
-                                </div>
-                                <div class="bg-gray-800 p-3 rounded-lg">
-                                    <p class="text-gray-400 text-sm">Trending in Politics</p>
-                                    <h3 class="text-white font-semibold">#Election2024</h3>
-                                    <p class="text-gray-400 text-sm">200K impressions</p>
-                                </div>
-                            </div>
-        </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#account">Account</a></li>
+      <li><a href="#premium">Premium</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" id="home" class="animate-spin" >
+    <div class="launch-text">
+      <h1>Welcome to Nexzone!</h1>
+      <p>Sign In to Nex World !!
+        
+        .</p>
     </div>
+    <form>
 
-    
-    
-    <script src="./script2.js"></script>
-    <script src="./post.js"></script>
+    <div class="button-container ">
+      <button type="submit" formaction="/Login page/login page.html" id="launchButton" class="launch-button" style="margin-right: 8px;">Sign In</button>
+      <button type="submit" formaction="/Login page/login page.html" id="launchButton" class="launch-button">Sign Up</button>
+    </div></div>
+      
+      <div class="rocket">
+      🚀
+    </div>
+  </div>
 
-
-    
+  <script src="js2.js"></script>
 </body>
 </html>
