@@ -57,7 +57,7 @@ body {
   right: 0;
   bottom: 0;
   min-width: 200%;
-  min-height: 200%;
+  min-height: 100%;
 }
 
 .icon-img {
