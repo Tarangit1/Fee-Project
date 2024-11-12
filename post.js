@@ -4,10 +4,8 @@ let showNSFW = false; // Default to not showing NSFW posts
 
 // Removed NSFW toggle event listener
 
-
-
 async function fetchRedditPosts(subreddit) {
-    const url = subreddit ? `https://www.reddit.com/r/${subreddit}/popular.json?limit=10` : `https://www.reddit.com/hot.json?limit=10`;
+    const url = subreddit ? `https://www.reddit.com/r/${subreddit}/hot.json?limit=10` : `https://www.reddit.com/hot.json?limit=10`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -102,6 +100,17 @@ function createDetailedPostElement(post) {
         postElement.appendChild(secureEmbedContainer);
     }
 
+    // Create upvote button
+    const upvoteButton = document.createElement('button');
+    upvoteButton.textContent = 'Upvote';
+    upvoteButton.classList.add('upvote-button');
+    upvoteButton.addEventListener('click', () => {
+        // Handle upvote logic here
+        console.log(`Upvoted post: ${post.id}`);
+    });
+
+    postElement.appendChild(upvoteButton);
+
     postContainer.appendChild(postElement);
     return postContainer;
 }
@@ -119,14 +128,18 @@ async function embedDetailedRedditPosts(subreddit) {
 }
 
 // Function to handle navigation within the app
-function openPostInApp(post) {
+async function openPostInApp(post) {
     const mainElement = document.querySelector('main');
     mainElement.innerHTML = ''; // Clear previous content
 
     const postElement = createDetailedPostElement(post);
     mainElement.appendChild(postElement);
 
+    const comments = await fetchRedditComments(post.id);
+    const commentsSection = createCommentsSection(comments, post.id);
+    mainElement.appendChild(commentsSection);
 }
+
 async function fetchRedditComments(postId) {
     const url = `https://www.reddit.com/comments/${postId}.json`;
     try {
@@ -170,10 +183,21 @@ function createCommentForm(postId) {
 
     return form;
 }
+
 // Function to handle upvote and downvote actions
 async function voteOnComment(commentId, voteType) {
     // Logic to send the vote to the server and update the comment score
     console.log(`Voting on comment ${commentId}: ${voteType}`);
+    // Simulate updating the score for demonstration purposes
+    const commentElement = document.querySelector(`[data-comment-id="${commentId}"]`);
+    const scoreElement = commentElement.querySelector('.comment-score');
+    let currentScore = parseInt(scoreElement.textContent);
+    if (voteType === 'upvote') {
+        currentScore += 1;
+    } else if (voteType === 'downvote') {
+        currentScore -= 1;
+    }
+    scoreElement.textContent = currentScore;
 }
 
 // Add event listeners to upvote and downvote buttons
@@ -188,38 +212,12 @@ document.addEventListener('click', (event) => {
         voteOnComment(commentId, 'downvote');
     }
 });
+
 // Function to create a Reddit-style comment element
 function createRedditCommentElement(comment) {
-    function showLoadingSpinner() {
-        const mainElement = document.querySelector('main');
-        const loadingSpinner = document.createElement('div');
-        loadingSpinner.classList.add('loading-spinner');
-        loadingSpinner.innerHTML = '<img src="img/loading.webp" alt="Loading...">';
-        mainElement.appendChild(loadingSpinner);
-    }
-
-    function hideLoadingSpinner() {
-        const loadingSpinner = document.querySelector('.loading-spinner');
-        if (loadingSpinner) {
-            loadingSpinner.remove();
-        }
-    }
-
-    async function embedDetailedRedditPosts(subreddit) {
-        const mainElement = document.querySelector('main');
-        mainElement.innerHTML = ''; // Clear previous content
-        showLoadingSpinner();
-
-        const posts = await fetchRedditPosts(subreddit);
-        hideLoadingSpinner();
-
-        posts.forEach(post => {
-            const postElement = createDetailedPostElement(post);
-            mainElement.appendChild(postElement);
-        });
-    }
     const commentElement = document.createElement('div');
     commentElement.classList.add('reddit-comment');
+    commentElement.dataset.commentId = comment.id; // Add unique identifier
 
     const voteContainer = document.createElement('div');
     voteContainer.classList.add('vote-container');
@@ -288,15 +286,17 @@ async function openPostInApp(post) {
 }
 
 // Add event listener to the search bar
-const searchBar = document.querySelector('#search-bar');
-if (searchBar) {
-    searchBar.addEventListener('input', async (event) => {
-        const subreddit = event.target.value;
-        if (subreddit.length > 2) { // Start searching after 3 characters
-            await embedDetailedRedditPosts(subreddit);
-        }
-    });
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBar = document.querySelector('#search-bar');
+    if (searchBar) {
+        searchBar.addEventListener('input', async (event) => {
+            const subreddit = event.target.value;
+            if (subreddit.length > 2) { // Start searching after 3 characters
+                await embedDetailedRedditPosts(subreddit);
+            }
+        });
+    }
+});
 
 // Initial call to display posts from a default subreddit
 embedDetailedRedditPosts("");
