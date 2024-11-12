@@ -1,0 +1,182 @@
+/* General styles */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #212121, #000000);
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Prevent page from scrolling */
+}
+
+.container {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 80px; /* Space for navbar */
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: linear-gradient(135deg, #212121, #000000);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5D5FEF;
+}
+
+#logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+#myVideo {
+  position: fixed;
+  
+  right: 0;
+  bottom: 0;
+  min-width: 200%;
+  min-height: 200%;
+}
+
+.icon-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Increased space between items */
+  margin: 20px;
+  margin-right: 50px ;
+  flex-grow: 1; /* Ensures the nav items stretch evenly */
+  justify-content: flex-end; /* Ensures items are aligned to the right */
+}
+#home{
+  height: 100vh;
+  width: 100vw;
+  margin-top: 91px;
+}
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #5D5FEF;
+}
+
+/* Launch animations */
+.launch-text h1 {
+  font-size: 3rem;
+  animation: textFadeIn 2s ease-in-out, textSlideUp 2s ease-in-out;
+}
+
+.launch-text p {
+  font-size: 1.5rem;
+  animation: textFadeIn 3s ease-in-out, textSlideUp 3s ease-in-out;
+}
+
+/* Launch button without bounce animation */
+.launch-button {
+  background-color: #5D5FEF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  /* animation: bounce 2s infinite; Removed this line */
+  transition: background-color 0.3s ease;
+}
+
+.launch-button:hover {
+  background-color: #5d5fefd2;
+}
+
+
+.rocket {
+  font-size: 5rem;
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+/* Animations */
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {  
+    opacity: 1;
+  }
+}
+
+@keyframes textSlideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes moveRocket {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 120%;
+    opacity: 0;
+  }
+}

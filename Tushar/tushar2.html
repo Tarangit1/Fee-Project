@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Payment Scanner</title>
+  <link rel="stylesheet" href="tushar2.css">
+</head>
+<body>
+  <header>
+    <h1>QR Payment Scanner</h1>
+  </header>
+
+  <main class="scanner-page">
+    <section class="price-selection">
+      <h2>Select a Price Plan</h2>
+      <select id="price-select">
+        <option value="none" disabled selected>Choose a Plan</option>
+        <option value="individual">Individual - Rs 150</option>
+        <option value="duo">Duo - Rs 250</option>
+        <option value="family">Family - Rs 500</option>
+        <option value="student">Student - Rs 60</option>
+      </select>
+      <div class="qr-image">
+        <img id="qr-code" src="default-qr.png" alt="QR Code">
+      </div>
+    </section>
+
+    <section class="scanner">
+      <h2>Scan QR Code to Pay</h2>
+      <video id="preview"></video>
+      <div id="scan-result">
+        <p>12-12-2024</p>
+        <p id="result">No QR code scanned yet</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Payment System. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/instascan/1.0.0/instascan.min.js"></script>
+  <script src="tushar2.js"></script>
+</body>
+</html>

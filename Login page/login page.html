@@ -200,7 +200,7 @@
           </div>
           <span>or use email for registration</span>
           <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Email" />
+          <input type="text" id="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
             <form method="post" action="../project.html">
               <button type="submit">Sign Up</button>
@@ -208,7 +208,7 @@
         </form>
       </div>
       <div class="sign-in">
-        <form class="text-black">
+        <form id="login-form" class="text-black">
           <h1>Sign In</h1>
           <div class="icons">
             <a href="#" class="icon"><i class="fa-brands fa-facebook"></i></a>
@@ -218,10 +218,22 @@
           </div>
           <span>or use email password</span>
           <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot password</a>
-            
-          <a href="../index.html">Sign In</a>
+            <input type="password" placeholder="Password" />
+            <p id="error-message" style="color: red; display: none;">Invalid email or password.</p>
+            <script>
+              document.getElementById('login-form').addEventListener('submit', function(event) {
+                const emailInput = document.querySelector('.sign-in input[type="text"]');
+                const passwordInput = document.querySelector('.sign-in input[type="password"]');
+                const emailValue = emailInput.value;
+                const passwordValue = passwordInput.value;
+                if (!emailValue.endsWith('@gmail.com') || passwordValue.trim() === '') {
+                  alert('Please enter a valid email address and password.');
+                  event.preventDefault(); // Prevent form submission
+                }
+              });
+            </script>
+            <a href="#">Forgot password</a>
+            <button type="submit" formaction="../indexpremium.html">Sign In</button>
         
           
         </form>
@@ -241,6 +253,18 @@
         </div>
       </div>
     </div>
+
+    <script>
+        
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            const emailInput = document.querySelector('.sign-in input[type="text"]');
+            const emailValue = emailInput.value;
+            if (!emailValue.endsWith('@gmail.com')) {
+                alert('Please enter a valid email address.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
     <script src="./script.js" type="module"></script>
   </body>
 </html>
